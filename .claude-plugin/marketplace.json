@@ -1,0 +1,17 @@
+{
+  "name": "ccal",
+  "owner": { "name": "Claude Code Autonomy Lab contributors" },
+  "metadata": {
+    "description": "Marketplace for the Claude Code Autonomy Lab (CCAL) plugin."
+  },
+  "plugins": [
+    {
+      "name": "claude-code-autonomy-lab",
+      "source": "./",
+      "description": "Audit local Claude Code settings and run evidence-based robustness workflows.",
+      "version": "0.1.0",
+      "license": "MIT",
+      "keywords": ["claude-code", "llm-security", "prompt-injection", "audit", "developer-tools"]
+    }
+  ]
+}

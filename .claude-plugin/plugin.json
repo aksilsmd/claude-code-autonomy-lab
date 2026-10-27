@@ -1,0 +1,7 @@
+{
+  "name": "claude-code-autonomy-lab",
+  "description": "Audit local Claude Code settings and run evidence-based robustness workflows.",
+  "version": "0.1.0",
+  "author": { "name": "Claude Code Autonomy Lab contributors" },
+  "license": "MIT"
+}
