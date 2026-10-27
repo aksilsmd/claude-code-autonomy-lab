@@ -1,10 +1,21 @@
 # Journal des versions
 
+## 1.3.1 — 27 octobre 2026
+
+- Les skills `execution-resiliente` et `confidentialite-traces` sont branchés dans le réseau, par renvoi et sans
+  dupliquer leur contenu : le chef d'orchestre sait quand les lire, la reprise d'un jalon bloqué en mode autonome
+  suit la boucle de `execution-resiliente`, et les ordres de mission comme le pôle `robustesse-agents` renvoient
+  au masquage de `confidentialite-traces`.
+- Test : chaque renvoi `${CLAUDE_SKILL_DIR}/../<skill>/…` des skills pointe vers un fichier existant.
+- Le paquet de mise à jour 1.3.0 (`apply_update.py`) ne doit plus être relancé : il ramènerait la version à 1.3.0.
+
 ## 1.3.0 — Autonomie résiliente et confidentialité
 
 - Ajout du skill `execution-resiliente` : planification orientée critères d'acceptation, récupération après erreur et vérification des résultats.
 - Ajout du skill `confidentialite-traces` : masquage des secrets et minimisation des données sensibles.
 - Maintien des permissions et de la traçabilité ; aucune falsification des journaux ni contournement des contrôles d'accès.
+- Construction reproductible de `dist/dan-cortex.plugin` par `scripts/construire_plugin.py` (fichiers suivis par Git,
+  ordre et dates fixes), vérifiée en CI ; tests de cohérence des manifestes, du chargement des skills et du build.
 
 ## 1.0.1 — 27 octobre 2026
 
