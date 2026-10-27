@@ -1,4 +1,10 @@
+import sys
+from pathlib import Path
 import unittest
+
+# Le paquet ccal vit dans le plugin : on le trouve sans installation préalable.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "dan-cortex" / "skills" / "robustesse-agents" / "scripts"))
+
 from ccal.audit import audit_settings
 
 class AuditTests(unittest.TestCase):

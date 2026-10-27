@@ -1,4 +1,10 @@
+import sys
+from pathlib import Path
 import unittest
+
+# Le paquet ccal vit dans le plugin : on le trouve sans installation préalable.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "dan-cortex" / "skills" / "robustesse-agents" / "scripts"))
+
 from ccal.evaluate import grade
 from ccal.scenarios import get_scenarios
 
