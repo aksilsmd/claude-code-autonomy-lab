@@ -1,17 +1,25 @@
 {
   "name": "ccal",
-  "owner": { "name": "Claude Code Autonomy Lab contributors" },
+  "owner": {
+    "name": "Aksil"
+  },
   "metadata": {
-    "description": "Marketplace for the Claude Code Autonomy Lab (CCAL) plugin."
+    "description": "Cortex fusionné avec Claude Code Autonomy Lab (CCAL)."
   },
   "plugins": [
     {
-      "name": "claude-code-autonomy-lab",
+      "name": "cortex",
       "source": "./",
-      "description": "Audit local Claude Code settings and run evidence-based robustness workflows.",
-      "version": "0.1.0",
+      "description": "Réseau d'agents experts pour mener un projet numérique de bout en bout, avec un pôle de robustesse des agents issu de CCAL.",
+      "version": "0.10.0",
       "license": "MIT",
-      "keywords": ["claude-code", "llm-security", "prompt-injection", "audit", "developer-tools"]
+      "keywords": [
+        "gestion de projet",
+        "multi-agents",
+        "sécurité",
+        "robustesse des agents",
+        "injection de prompt"
+      ]
     }
   ]
 }

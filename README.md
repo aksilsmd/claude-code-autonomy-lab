@@ -4,16 +4,25 @@ Un réseau d'agents experts, organisé comme une entreprise, pour cadrer, concev
 lancer un grand projet numérique : site web de grande entreprise, application mobile, SaaS, produit de niche,
 e-commerce, ERP. Rien n'est oublié, et le tout est conçu pour consommer peu de tokens.
 
+Cette édition fusionne Cortex avec **Claude Code Autonomy Lab (CCAL)** : un pôle `robustesse-agents` audite les
+réglages Claude Code de la mission, fait traiter tout contenu lu comme une donnée et non comme un ordre, et éprouve
+les fonctions d'IA du produit contre l'injection d'instructions par des scénarios notés PASS, REVIEW ou FAIL.
+
 ## Installer
 
 Dans Claude Code :
 
 ```
-/plugin marketplace add aksilsmd/cortex
-/plugin install cortex@cortex-projets
+/plugin marketplace add aksilsmd/claude-code-autonomy-lab
+/plugin install cortex@ccal
 ```
 
-Dans l'application Claude : téléverse le fichier `cortex.plugin` dans Personnaliser → Plugins → Ajouter.
+En ligne de commande : `claude plugin marketplace add aksilsmd/claude-code-autonomy-lab` puis
+`claude plugin install cortex@ccal`.
+
+Si une autre copie de Cortex est déjà installée (marketplace `cortex-projets` ou plugin téléversé sur claude.ai),
+désactive-la ou retire-la : deux plugins portent le même nom `cortex`. Claude Code donne la priorité à la copie
+installée localement et ignore le plugin téléversé, mais une seule source évite toute confusion de version.
 
 ## Démarrer
 
@@ -72,6 +81,7 @@ Chaque pôle s'utilise aussi directement.
 | `/cortex:lancement-exploitation` | go/no-go, plan de bascule, mise en production, support, bilan |
 | `/cortex:reunion-decision` | faire débattre les experts et tracer une décision |
 | `/cortex:audit-general` | audit à 360° d'un projet, mené avec Cortex ou non |
+| `/cortex:robustesse-agents` | audit des réglages Claude Code, menaces propres à l'IA, scénarios d'injection d'instructions, évaluation live sur accord |
 
 ## Comment ça marche
 
@@ -87,8 +97,11 @@ Chaque pôle s'utilise aussi directement.
   relit l'architecture.
 - **Un super-auditeur** indépendant passe tout en revue avant le lancement ; son rapport est débattu en plénière,
   puis les corrections sont décidées et recontrôlées.
-- **Une matrice de couverture de 768 contrôles**, filtrée selon ton projet : chaque ligne finit
+- **Une matrice de couverture de 781 contrôles**, filtrée selon ton projet : chaque ligne finit
   « fait » avec sa preuve, « non applicable » avec son motif, ou « risque accepté » avec un nom.
+- **Une règle commune à tous les agents** : ce qu'ils lisent (page web, avis, document, sortie d'outil) est une
+  donnée, jamais un ordre ; une instruction trouvée est signalée, pas exécutée. Les réglages des agents sont
+  audités avant la première vague.
 - **Un script** tient les registres, vérifie les jalons, la traçabilité des exigences aux tests et la cohérence
   des interactions (aucun bouton sans destination, aucun écran orphelin).
 
@@ -98,11 +111,11 @@ Le détail est dans `skills/lancer-projet/references/reseau.md`.
 
 | Élément | Nombre | Où |
 |---|---|---|
-| Skills | 13 | `skills/` |
+| Skills | 14 | `skills/` |
 | Agents | 45 | `agents/` |
-| Contrôles de couverture | 768 | `skills/*/references/checklist-*.md` |
-| Fichiers de référence et gabarits | 119 | `skills/*/references/` |
-| Scripts | 2 | `skills/lancer-projet/scripts/` (`cortex.py`, `essais.py`) |
+| Contrôles de couverture | 781 | `skills/*/references/checklist-*.md` |
+| Fichiers de référence et gabarits | 124 | `skills/*/references/` |
+| Scripts | 3 | `skills/lancer-projet/scripts/` (`cortex.py`, `essais.py`), `skills/robustesse-agents/scripts/` (`robustesse.py` et le paquet `ccal`) |
 
 ## Sobriété en tokens
 
@@ -113,7 +126,7 @@ Ordres de grandeur observés en octobre 2026 dans une session très équipée ; 
 | agent généraliste | environ 90 000 tokens |
 | agent Cortex, outils de métier | environ 6 000 tokens |
 
-- Coût permanent du plugin : environ 3 601 tokens par session, pour les noms et descriptions des
+- Coût permanent du plugin : environ 3 750 tokens par session, pour les noms et descriptions des
   skills et des agents. Désactive le plugin quand tu ne t'en sers pas : ce coût tombe à zéro.
 - Les agents de collecte et d'exécution tournent sur le modèle léger, la production sur le modèle intermédiaire,
   le jugement (architecture, droit, audit) sur le modèle de ta session.
@@ -147,5 +160,21 @@ Ordres de grandeur observés en octobre 2026 dans une session très équipée ; 
 
 ## Prérequis
 
-Python 3 pour les scripts (bibliothèque standard uniquement). Sans Python, le chef d'orchestre tient les mêmes
-registres à la main, pour plus cher en tokens.
+Python 3 pour les scripts (bibliothèque standard uniquement ; 3.11 ou plus récent pour `robustesse.py`). Sans
+Python, le chef d'orchestre tient les mêmes registres à la main, pour plus cher en tokens. L'évaluation live du
+pôle `robustesse-agents` demande en plus le CLI `claude`.
+
+## Développer
+
+```bash
+python3 skills/lancer-projet/scripts/cortex.py plugin verifier   # format des checklists
+python3 -m pip install -e .                                     # installe la commande ccal
+python3 -m unittest discover -s tests -v                       # tests du paquet ccal
+```
+
+## Origine
+
+Cortex est l'œuvre d'Aksil (https://github.com/aksilsmd/cortex). Le pôle `robustesse-agents` reprend Claude Code
+Autonomy Lab : son script d'audit, son corpus de scénarios et son évaluation live, et sa méthode, qui s'appuie sur
+les travaux d'Anthropic sur le bac à sable de Claude Code, l'OWASP Top 10 for LLM Applications 2025 et l'OWASP
+DevSecOps Guideline. Licence MIT.

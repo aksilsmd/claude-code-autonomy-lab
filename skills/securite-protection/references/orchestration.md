@@ -10,7 +10,7 @@ Pour le chef d'orchestre, ou pour l'orchestrateur du pôle. Les agents experts n
 | `auditeur-securite` | B | J3 pour le plan de tests ; J4 après chaque incrément (contrôles automatisés) ; J5 pour le rapport de tests complet et le contre-test |
 | `testeur-intrusion` | B | J5, vague 5A, seulement avec périmètre et autorisation écrits |
 
-Activation : `architecte-securite` dès qu'il y a données personnelles, paiement ou comptes ; `testeur-intrusion` si le produit est exposé à internet avec données sensibles. Sinon `auditeur-securite` couvre le minimum.
+Activation : `architecte-securite` dès qu'il y a données personnelles, paiement ou comptes ; `testeur-intrusion` si le produit est exposé à internet avec données sensibles. Sinon `auditeur-securite` couvre le minimum. Étiquette `ia` : le pôle suit aussi `../../robustesse-agents/references/orchestration.md`.
 
 ## Vagues types
 
@@ -18,9 +18,9 @@ Activation : `architecte-securite` dès qu'il y a données personnelles, paiemen
 |---|---|---|---|
 | J2, 2A | `architecte-securite` : analyse de risques, niveau ASVS proposé, régimes applicables | fiche projet, note de cadrage, cartographie des données | `02-cadrage/analyse-risques-securite.md` |
 | J3, 3A | `architecte-securite` : modèle de menaces et architecture de sécurité ; en parallèle `ingenieur-devops` (infrastructure) et `architecte-solution` (architecture) | analyse de risques, flux du dossier d'architecture | `03-conception/securite/modele-menaces.md`, `architecture-securite.md` |
-| J3, 3B | `auditeur-securite` : plan de tests de sécurité, dérivé du niveau ASVS et du modèle de menaces | modèle de menaces, SFD, stratégie de test | `03-conception/securite/plan-tests-securite.md` |
+| J3, 3B | `auditeur-securite` : plan de tests de sécurité, dérivé du niveau ASVS et du modèle de menaces ; projet `ia` : corpus de scénarios de robustesse | modèle de menaces, SFD, stratégie de test | `03-conception/securite/plan-tests-securite.md` |
 | J4, 4B à 4n | `auditeur-securite` : contrôles automatisés sur chaque incrément, après les développeurs | code, dépendances, images | constats au registre |
-| J5, 5A | `auditeur-securite` : tests complets et rapport ; `testeur-intrusion` : test d'intrusion sur l'environnement de recette | produit en recette, comptes de test par rôle, autorisation écrite | `05-validation/rapport-securite.md`, `rapport-test-intrusion.md` |
+| J5, 5A | `auditeur-securite` : tests complets et rapport, et essais de robustesse pour un projet `ia` ; `testeur-intrusion` : test d'intrusion sur l'environnement de recette | produit en recette, comptes de test par rôle, autorisation écrite | `05-validation/rapport-securite.md`, `rapport-test-intrusion.md`, `rapport-robustesse-agents.md` |
 | J5, corrections | auteurs repris, puis `auditeur-securite` en contre-test | constats ouverts | constats clos avec preuve |
 | J6, 6A | `architecte-securite` : plan de réponse à incident avec `responsable-support-formation` | délais de notification applicables | section du plan de support |
 

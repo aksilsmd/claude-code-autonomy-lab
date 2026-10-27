@@ -10,7 +10,8 @@ Créée par `cortex.py init`. Les chemins sont ceux qu'attend la vérification d
                    lecons.md, cortex.json, couverture.csv, journal-agents.csv,
                    registres/ (decisions, risques, constats, anomalies, actions, changements : fichiers .csv),
                    plans/ (plans de délégation et synthèses de pôle),
-                   reunions/ (PV-<aaaammjj>-<sujet>.md), audits/ (revues, audits de jalon, audit-general.md)
+                   reunions/ (PV-<aaaammjj>-<sujet>.md), audits/ (revues, audits de jalon, audit-general.md,
+                   audit-reglages-agents.md)
   01-decouverte/   etude-de-marche.md, benchmark-concurrentiel.md, voix-du-client.md, analyse-contexte.md,
                    prediagnostic-juridique.md, note-faisabilite-technique.md, note-opportunite.md,
                    sources/ (concurrents/, avis/, marche/ : fiches de collecte datées et sourcées)
@@ -31,7 +32,7 @@ Créée par `cortex.py init`. Les chemins sont ceux qu'attend la vérification d
                    marketing/ (plan-marketing.md, plan-commercial.md, prix-offre.md)
   04-realisation/  lots.md, journal-de-build.md, journaux/ (sorties de tests écrites par essais.py), revues/
   05-validation/   pv-recette.md, rapport-performance.md, rapport-accessibilite.md, rapport-securite.md,
-                   rapport-test-intrusion.md, dossier-conformite.md
+                   rapport-test-intrusion.md, rapport-robustesse-agents.md, dossier-conformite.md
   06-lancement/    checklist-go-no-go.md, plan-de-lancement.md, runbook-mise-en-production.md,
                    plan-communication.md, plan-support.md
   07-exploitation/ suivi-indicateurs.md, feuille-de-route.md, bilan-de-projet.md

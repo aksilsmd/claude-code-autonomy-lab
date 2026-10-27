@@ -82,6 +82,8 @@ exploitation · Cohérence transversale
 | Le test d'intrusion était-il autorisé par écrit, sur un périmètre défini ? | rapport, autorisation | périmètre flou, cible tierce |
 | Les vulnérabilités critiques et hautes sont-elles corrigées et recontrôlées ? | rapport, contre-test | corrections sans contre-test |
 | Un plan de réponse à incident existe-t-il, avec les délais de notification ? | architecture de sécurité | aucun responsable désigné |
+| Les réglages des agents de la mission ont-ils été audités, et les constats HIGH tranchés par l'utilisateur ? | audit des réglages des agents | mode de permission contourné ou règle `Bash(*)` sans décision écrite |
+| Pour une fonction d'IA, l'injection d'instructions et les actions de l'agent sont-elles testées par des scénarios répétés ? | rapport de robustesse des agents | essai unique, verdict « sûr » fondé sur la seule heuristique |
 
 ## Données personnelles
 

@@ -23,7 +23,7 @@ Ce pôle fait en sorte que le projet résiste aux intrusions, aux logiciels malv
 1. **Cadrer le risque (J2)** : actifs, menaces, exigences, niveau ASVS visé, régimes applicables (`references/analyse-risques-menaces.md`, `references/obligations-cyber.md`).
 2. **Modéliser les menaces par flux (J3)** et concevoir les protections par couche et par taille de projet (`references/analyse-risques-menaces.md`, `references/protections-par-couche.md`).
 3. **Brancher les contrôles automatisés** dans la chaîne de livraison avec leurs seuils de blocage (`references/devsecops.md`).
-4. **Planifier les tests de sécurité** : plan fondé sur l'ASVS, matrice des autorisations, configuration (`references/tests-securite.md`).
+4. **Planifier les tests de sécurité** : plan fondé sur l'ASVS, matrice des autorisations, configuration (`references/tests-securite.md`). Projet `ia` : ajouter les menaces propres à l'IA et le corpus de scénarios de robustesse avec le skill `cortex:robustesse-agents`.
 5. **Auditer le produit construit (J4-J5)** et consigner chaque constat au registre : gravité, preuve non exploitable, recommandation (`references/tests-securite.md`).
 6. **Cadrer et réaliser le test d'intrusion (J5)** sur environnement de recette, après autorisation écrite (`references/test-intrusion.md`).
 7. **Faire corriger, puis contre-tester** : les auteurs sont repris, le contre-test clôt le constat.
@@ -41,6 +41,7 @@ Ce pôle fait en sorte que le projet résiste aux intrusions, aux logiciels malv
 | Rapport de tests de sécurité | `05-validation/rapport-securite.md` | `AUD-`, `ANO-` |
 | Autorisation et rapport de test d'intrusion | `05-validation/rapport-test-intrusion.md` | `AUD-`, `ANO-` |
 | Plan de réponse à incident | `06-lancement/plan-support.md` (section dédiée) | `SEC-` |
+| Rapport de robustesse des agents (projets `ia`) | `05-validation/rapport-robustesse-agents.md` | `ROB-`, `ANO-` |
 
 ## Références
 
@@ -54,6 +55,7 @@ Ce pôle fait en sorte que le projet résiste aux intrusions, aux logiciels malv
 | `${CLAUDE_SKILL_DIR}/references/reponse-incident.md` | pour le plan de réponse à incident et les délais de notification |
 | `${CLAUDE_SKILL_DIR}/references/obligations-cyber.md` | pour savoir qui est concerné par NIS2, DORA, CRA, PCI DSS, HDS |
 | `${CLAUDE_SKILL_DIR}/references/checklist-securite.md` | contrôles `SEC-` à fusionner dans la couverture |
+| `${CLAUDE_SKILL_DIR}/../robustesse-agents/SKILL.md` | projet `ia`, ou audit des réglages des agents : injection d'instructions, scénarios, évaluation |
 | `${CLAUDE_SKILL_DIR}/references/orchestration.md` | chef d'orchestre seulement : agents du pôle, vagues, essaimage, revues |
 
 ## Garde-fous

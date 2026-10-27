@@ -1,7 +1,7 @@
 {
   "name": "cortex",
-  "version": "0.9.0",
-  "description": "Cortex : un réseau d'agents experts organisé comme une entreprise pour cadrer, concevoir, réaliser, tester, sécuriser et lancer un grand projet numérique (site d'entreprise, application mobile, SaaS, produit de niche, e-commerce, ERP) sans rien oublier et en consommant peu de tokens.",
+  "version": "0.10.0",
+  "description": "Cortex : un réseau d'agents experts organisé comme une entreprise pour cadrer, concevoir, réaliser, tester, sécuriser et lancer un grand projet numérique (site d'entreprise, application mobile, SaaS, produit de niche, e-commerce, ERP) sans rien oublier et en consommant peu de tokens, avec un pôle de robustesse des agents (audit des réglages Claude Code, résistance à l'injection d'instructions) issu de Claude Code Autonomy Lab.",
   "author": {
     "name": "Aksil"
   },
@@ -17,8 +17,10 @@
     "juridique",
     "budget",
     "marketing",
-    "lancement"
+    "lancement",
+    "robustesse des agents",
+    "injection de prompt"
   ],
-  "homepage": "https://github.com/aksilsmd/cortex",
-  "repository": "https://github.com/aksilsmd/cortex"
+  "homepage": "https://github.com/aksilsmd/claude-code-autonomy-lab",
+  "repository": "https://github.com/aksilsmd/claude-code-autonomy-lab"
 }

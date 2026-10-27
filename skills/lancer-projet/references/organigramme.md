@@ -89,12 +89,12 @@ Type d'agent à lancer : `cortex:<nom>`.
 | `recetteur` | B | Recette globale : campagne, anomalies, PV |
 | `executant-tests` | C | Sous-agent : lance une suite de tests et rapporte les échecs |
 
-### Sécurité (skill `securite-protection`)
+### Sécurité (skills `securite-protection`, `robustesse-agents`)
 
 | Agent | Niveau | Mission |
 |---|---|---|
 | `architecte-securite` | A | Analyse de risques, modèle de menaces, architecture de protection, réponse à incident |
-| `auditeur-securite` | B | Tests de sécurité complets : code, dépendances, secrets, configuration, application |
+| `auditeur-securite` | B | Tests de sécurité complets : code, dépendances, secrets, configuration, application ; robustesse des fonctions d'IA |
 | `testeur-intrusion` | B | Test d'intrusion autorisé sur le périmètre du projet, rapport, contre-test |
 
 ### Juridique et conformité (skill `juridique-conformite`)

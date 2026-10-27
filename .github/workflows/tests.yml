@@ -16,6 +16,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
+      - run: python skills/lancer-projet/scripts/cortex.py plugin verifier
       - run: python -m pip install -e .
       - run: python -m unittest discover -s tests -v
       - run: ccal scenarios --output /tmp/ccal-scenarios.json
+      - run: python -I skills/robustesse-agents/scripts/robustesse.py scenarios --output /tmp/robustesse-scenarios.json

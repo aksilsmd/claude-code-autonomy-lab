@@ -198,7 +198,7 @@ revue de chaque lot par deux relecteurs, tests de mutation sur le cœur métier,
 | recetteur | `05-validation/pv-recette.md` : campagne complète du cahier de recette |
 | automaticien-tests | `05-validation/rapport-performance.md` |
 | expert-accessibilite | `05-validation/rapport-accessibilite.md` |
-| auditeur-securite | `05-validation/rapport-securite.md` |
+| auditeur-securite | `05-validation/rapport-securite.md` ; projet `ia` : `05-validation/rapport-robustesse-agents.md` |
 | testeur-intrusion | `05-validation/rapport-test-intrusion.md` (périmètre et autorisation écrits d'abord) |
 | juriste-numerique et delegue-protection-donnees | `05-validation/dossier-conformite.md` |
 | ingenieur-devops | répétition de déploiement, sauvegarde et restauration testées |

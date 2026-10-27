@@ -40,7 +40,7 @@ Ce pôle transforme des spécifications validées en code livré, testé et conf
 | Performance et accessibilité | `automaticien-tests`, `expert-accessibilite` | rapports |
 | Tests de sécurité complets, puis intrusion | `auditeur-securite`, `testeur-intrusion` (autorisation écrite d'abord) | rapports, contre-tests |
 
-Les tests de sécurité et d'intrusion suivent le skill `securite-protection` ; ce pôle les place dans la chaîne et rejoue la non-régression après chaque correction.
+Les tests de sécurité et d'intrusion suivent le skill `securite-protection`, et les essais de robustesse des fonctions d'IA le skill `robustesse-agents` ; ce pôle les place dans la chaîne et rejoue la non-régression après chaque correction.
 
 ## Livrables
 

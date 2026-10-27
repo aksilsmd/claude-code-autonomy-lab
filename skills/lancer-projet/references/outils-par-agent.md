@@ -41,7 +41,7 @@ extérieur ou un connecteur de la session revient au chef d'orchestre (voir `rou
 | `recetteur` | Réalisation et qualité | B, `sonnet`, effort medium | `usine-logicielle` | Read, Write, Edit, Glob, Grep, Bash, WebFetch |
 | `relecteur-code` | Réalisation et qualité | B, `sonnet`, effort medium | `usine-logicielle` | Read, Write, Edit, Glob, Grep, Bash, WebFetch |
 | `architecte-securite` | Sécurité | A, `inherit`, effort high | `securite-protection` | Read, Write, Edit, Glob, Grep, Bash, WebSearch, WebFetch |
-| `auditeur-securite` | Sécurité | B, `sonnet`, effort medium | `securite-protection` | Read, Write, Edit, Glob, Grep, Bash, WebSearch, WebFetch |
+| `auditeur-securite` | Sécurité | B, `sonnet`, effort medium | `securite-protection`, `robustesse-agents` | Read, Write, Edit, Glob, Grep, Bash, WebSearch, WebFetch |
 | `testeur-intrusion` | Sécurité | B, `sonnet`, effort medium | `securite-protection` | Read, Write, Edit, Glob, Grep, Bash, WebSearch, WebFetch |
 | `delegue-protection-donnees` | Juridique et conformité | B, `sonnet`, effort medium | `juridique-conformite` | Read, Write, Edit, Glob, Grep, WebSearch, WebFetch |
 | `juriste-numerique` | Juridique et conformité | A, `inherit`, effort high | `juridique-conformite` | Read, Write, Edit, Glob, Grep, WebSearch, WebFetch |

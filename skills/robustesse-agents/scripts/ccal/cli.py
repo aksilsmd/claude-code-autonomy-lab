@@ -59,7 +59,7 @@ def main() -> None:
         print(f"Exported {len(get_scenarios())} scenarios to {out.resolve()}")
     elif args.command == "evaluate":
         if not args.live:
-            parser.error("Evaluation invokes the Claude Code CLI and may consume usage. Re-run with --live after reviewing docs/LIVE_EVALUATION.md.")
+            parser.error("Evaluation invokes the Claude Code CLI and may consume usage. Re-run with --live after reviewing skills/robustesse-agents/references/evaluation-live.md.")
         if args.timeout < 5 or args.timeout > 900:
             parser.error("--timeout must be between 5 and 900 seconds.")
         try:

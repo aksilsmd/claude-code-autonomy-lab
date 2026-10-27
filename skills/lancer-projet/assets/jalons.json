@@ -61,6 +61,7 @@
     "documents": [
       {"chemin": "05-validation/pv-recette.md"},
       {"chemin": "05-validation/rapport-securite.md"},
+      {"chemin": "05-validation/rapport-robustesse-agents.md", "tags": ["ia"]},
       {"chemin": "05-validation/rapport-test-intrusion.md", "modes": ["standard", "integral"]},
       {"chemin": "05-validation/rapport-accessibilite.md", "modes": ["standard", "integral"]},
       {"chemin": "05-validation/dossier-conformite.md"},

@@ -51,8 +51,12 @@ réserve-le aux décisions, pas à la lecture de documents entiers.
    Le script crée l'arborescence, les registres et la matrice de couverture filtrée pour ce projet. Les types,
    étiquettes et conventions sont décrits dans `references/dossier-projet.md` ; `cortex.py aide` liste toutes
    les commandes et leurs arguments en une fois.
-4. **Composer l'équipe** avec `references/organigramme.md` et l'écrire dans `00-pilotage/organigramme.md`.
-5. **Annoncer le plan** en cinq lignes et créer la liste de tâches visible par l'utilisateur.
+4. **Auditer les réglages des agents** avant la première vague, par script et sans rien modifier :
+   `python3 ${CLAUDE_SKILL_DIR}/../robustesse-agents/scripts/robustesse.py audit-config`, sortie rangée dans
+   `00-pilotage/audits/audit-reglages-agents.md`. Un constat `HIGH` est soumis à l'utilisateur : il le corrige ou
+   l'accepte, et l'acceptation va au registre des risques (skill `cortex:robustesse-agents`).
+5. **Composer l'équipe** avec `references/organigramme.md` et l'écrire dans `00-pilotage/organigramme.md`.
+6. **Annoncer le plan** en cinq lignes et créer la liste de tâches visible par l'utilisateur.
 
 ### Les trois modes
 
