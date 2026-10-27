@@ -3,8 +3,8 @@ requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "claude-code-autonomy-lab"
-version = "0.2.0"
+name = "dan-cortex-ccal"
+version = "1.0.0"
 description = "Local configuration auditing and robustness evaluation toolkit for Claude Code"
 readme = "README.md"
 requires-python = ">=3.11"
@@ -18,4 +18,4 @@ dependencies = []
 ccal = "ccal.cli:main"
 
 [tool.setuptools.packages.find]
-where = ["skills/robustesse-agents/scripts"]
+where = ["dan-cortex/skills/robustesse-agents/scripts"]

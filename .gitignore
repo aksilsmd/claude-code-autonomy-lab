@@ -1,9 +1,8 @@
-.venv/
 __pycache__/
-*.py[cod]
+*.pyc
+.DS_Store
 *.egg-info/
 build/
-dist/
+.venv/
 ccal-results/
 ccal-scenarios.json
-.coverage
