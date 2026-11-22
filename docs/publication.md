@@ -24,10 +24,10 @@ leurs habitudes et leurs scripts.
   - `README.md` → le badge `badge/version-<x.y.z>-`
 - [ ] **2. La description et les mots-clés** de `plugin.json` et de l'entrée de la place de marché disent ce que
   la version apporte. Aucun mot-clé en double.
-- [ ] **3. Les compteurs**, si le nombre de skills ou d'agents a changé : badges `badge/skills-<n>-` et
-  `badge/agents-<n>-` du `README.md` racine, lignes `| Skills | <n> |` et `| Agents | <n> |` de
-  `dan-cortex/README.md`.
-- [ ] **4. Le catalogue** : chaque nouvelle commande `/dan-cortex:<nom>` est citée dans les deux README.
+- [ ] **3. Les compteurs**, si le nombre de skills ou d'agents a changé : la ligne `**<n> skills**, **<n> agents**`
+  en tête du `README.md` racine, et les lignes `| Skills | <n> |` et `| Agents | <n> |` de `dan-cortex/README.md`.
+- [ ] **4. Le catalogue** : chaque nouvelle commande `/dan-cortex:<nom>` est citée dans `docs/commandes.md`
+  (ou dans le tableau des pôles du `README.md`) et dans `dan-cortex/README.md`.
 - [ ] **5. Le journal** : l'entrée du `CHANGELOG` dit ce qui change pour l'utilisateur, pas ce qui change dans
   les fichiers. Une version n'y figure qu'une fois.
 - [ ] **6. L'archive** : `make build`, et `dist/dan-cortex.plugin` entre dans le même commit que les sources.

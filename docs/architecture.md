@@ -76,6 +76,35 @@ Un skill de `skills/` les ouvre à la demande : elles ne sont jamais chargées a
 pèsent donc pas sur le contexte. Une correction à y apporter remonte chez l'auteur amont ; ici, on met la copie
 à jour et on cite la licence dans `THIRD_PARTY_NOTICES.md`.
 
+## Le réseau en un schéma
+
+Comment les agents travaillent entre eux pendant un projet. Ce diagramme vit ici plutôt que dans le `README`
+parce qu'il est rendu par le navigateur après le chargement de la page : sur mobile, cela retarde l'affichage
+et peut tronquer la fin du document.
+
+```mermaid
+flowchart TB
+  U([Toi]) <--> N[Chef d'orchestre]
+  N ==vague parallèle==> A1[Experts marché] & A2[Experts spécifications] & A3[Experts design] & A4[Experts technique]
+  A1 --> S[Sous-agents de collecte]
+  A1 & A2 & A3 & A4 --> D[(Dossier projet : livrables, registres, matrice de couverture)]
+  D --> R[Revues croisées entre métiers]
+  R --> M{Réunion : positions, contradicteur, décision}
+  M --> G[Jalon vérifié par script]
+  G --> AU[Super-auditeur indépendant]
+  AU -->|constats débattus| M
+  M -->|corrections| A1 & A2 & A3 & A4
+```
+
+- **Un chef d'orchestre** parle avec l'utilisateur et lance les agents par vagues parallèles.
+- **Des orchestrateurs de pôle** découpent le travail en ordres de mission ; **des sous-agents légers** font la
+  collecte et l'exécution.
+- **Des réunions écrites** tranchent les choix structurants : positions séparées, contradicteur, deux tours au
+  plus, décision tracée.
+- **Des revues croisées** : le juriste relit le marketing, le testeur relit les spécifications, la sécurité
+  relit l'architecture.
+- **Un super-auditeur** indépendant audite tout avant le lancement.
+
 ## La chaîne de publication
 
 ```
@@ -123,8 +152,8 @@ un usage hors dépôt.
 2. Range le savoir dans `references/`, les données dans `assets/`, les contrôles déterministes dans `scripts/`.
 3. Si le skill appartient au déroulé d'un projet, branche-le dans le chef d'orchestre :
    `dan-cortex/skills/lancer-projet/SKILL.md`, par un renvoi `${CLAUDE_SKILL_DIR}/../<nom>/SKILL.md`.
-4. Cite la commande dans **les deux** README — `README.md` racine et `dan-cortex/README.md` — et mets à jour les
-   compteurs : badge `badge/skills-<n>-` du premier, ligne `| Skills | <n> |` du second.
+4. Cite la commande dans [`commandes.md`](commandes.md) et dans `dan-cortex/README.md`, puis mets à jour les
+   compteurs : la ligne `**<n> skills**` du premier, la ligne `| Skills | <n> |` du second.
 5. `make build`, puis `make verify`.
 
 ## Ajouter un agent

@@ -34,6 +34,8 @@ DOCUMENTS = (
     "docs/README.md",
     "docs/architecture.md",
     "docs/publication.md",
+    "docs/commandes.md",
+    "docs/README.en.md",
 )
 
 GOUVERNANCE = DOCUMENTS + POINTEURS
@@ -159,6 +161,15 @@ class DocumentationTests(unittest.TestCase):
                 with self.subTest(fichier=nom, ancre=cible):
                     self.assertIn(cible[1:], disponibles,
                                   "%s renvoie à %s, qui n'est pas un de ses titres" % (nom, cible))
+
+
+    def test_readme_reste_leger(self):
+        """Une page d'accueil lourde se charge mal, et l'application mobile de GitHub en tronque la fin."""
+        readme = lire("README.md")
+        images = readme.count("<img ")
+        self.assertLessEqual(images, 4, "chaque image du README est une requête externe de plus : %d, c'est trop" % images)
+        self.assertNotIn("```mermaid", readme,
+                         "un diagramme mermaid est rendu après le chargement : il retarde la page et tronque sa fin")
 
 
 class OutillageTests(unittest.TestCase):

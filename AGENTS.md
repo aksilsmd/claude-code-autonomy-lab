@@ -33,8 +33,8 @@ Les enfreindre casse la publication, pas seulement les tests.
    les deux champs de `.claude-plugin/marketplace.json` (`metadata.version` et l'entrée du plugin), la première
    entrée de `CHANGELOG.md`, et le badge `badge/version-<x.y.z>-` de `README.md`. Un test l'exige.
 4. **Les compteurs de la documentation sont vérifiés.** Ajouter un skill oblige à mettre à jour le badge
-   `badge/skills-<n>-` du `README.md` racine, la ligne `| Skills | <n> |` de `dan-cortex/README.md`, et à citer
-   la commande `/dan-cortex:<nom>` dans les deux README.
+   le compteur `**<n> skills**` du `README.md` racine, la ligne `| Skills | <n> |` de `dan-cortex/README.md`,
+   et à citer la commande `/dan-cortex:<nom>` dans `docs/commandes.md` et dans `dan-cortex/README.md`.
 5. **Aucun secret, aucune donnée personnelle, aucune charge utile offensive** n'entre dans le dépôt. Les
    adresses présentes dans `dan-cortex/THIRD_PARTY_NOTICES.md` et les fichiers `OFL.txt` sont des mentions de
    licence : **ne les retire pas**, la SIL Open Font License impose de les conserver.
@@ -120,4 +120,6 @@ existe.
   *pourquoi*, et la liste des vérifications passées. Exemple : `Ajoute 12 contrôles RGPD au pôle juridique`.
 - **Rédaction** : phrases courtes, voix active, tutoiement comme dans le reste du dépôt. Pas de superlatif. Ce
   qui engage juridiquement ou financièrement est marqué « à valider ».
-- **Markdown** : lignes à 120 colonnes au plus, un titre `#` par fichier, tableaux plutôt que longues listes.
+- **Markdown** : prose à 120 colonnes au plus — une ligne de tableau ou une URL ne se coupe pas et fait
+  exception ; un titre `#` par fichier ; tableaux plutôt que longues listes ; pas de diagramme rendu par le
+  navigateur dans le `README`, ni plus de trois images : la page d'accueil doit s'afficher vite sur mobile.

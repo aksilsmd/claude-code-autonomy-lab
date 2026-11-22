@@ -57,12 +57,15 @@ class SkillsTests(unittest.TestCase):
         self.assertTrue({"execution-resiliente", "confidentialite-traces"} <= noms)
 
     def test_compte_des_skills_dans_la_documentation(self):
+        # Le README racine porte ses compteurs en texte : un badge est une image externe de plus à charger.
         n = len(self.dossiers)
-        self.assertIn("badge/skills-%d-" % n, lire(ROOT / "README.md"))
+        self.assertIn("**%d skills**" % n, lire(ROOT / "README.md"))
         self.assertIn("| Skills | %d |" % n, lire(PLUGIN / "README.md"))
 
     def test_chaque_skill_est_documente(self):
-        racine, plugin = lire(ROOT / "README.md"), lire(PLUGIN / "README.md")
+        # Les pôles sont présentés dans le README ; les autres commandes dans docs/commandes.md.
+        racine = lire(ROOT / "README.md") + lire(ROOT / "docs" / "commandes.md")
+        plugin = lire(PLUGIN / "README.md")
         for dossier in self.dossiers:
             if dossier.name == "lancer-projet":
                 continue

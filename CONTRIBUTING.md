@@ -80,7 +80,8 @@ plugin.
   *pourquoi*, et les vérifications passées. Exemple : `Ajoute 12 contrôles RGPD au pôle juridique`.
 - **Rédaction** : phrases courtes, voix active, tutoiement. Pas de superlatif. Ce qui engage juridiquement ou
   financièrement est marqué « à valider ».
-- **Markdown** : 120 colonnes au plus, un titre `#` par fichier, tableaux plutôt que longues listes.
+- **Markdown** : prose à 120 colonnes au plus — les lignes de tableau et les URL font exception —, un titre
+  `#` par fichier, tableaux plutôt que longues listes.
 - **Mise en forme des fichiers** : réglée par [`.editorconfig`](.editorconfig) — UTF-8, fins de ligne LF,
   pas d'espace en fin de ligne.
 

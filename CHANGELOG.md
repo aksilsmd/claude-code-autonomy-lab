@@ -23,6 +23,11 @@
   `docs/publication.md` (numérotation, liste de contrôle d'une version, canaux de diffusion, retour en arrière).
 - Nouveaux garde-fous dans `tests/test_depot.py` : fichiers de gouvernance présents, index de la documentation
   exact, liens relatifs résolus, et Makefile aligné sur les étapes de la CI.
+- Le `README` s'affiche plus vite : trois images au lieu de sept (chaque badge est une requête externe servie par
+  le proxy d'images de GitHub), le diagramme mermaid rejoint `docs/architecture.md` — il était rendu par le
+  navigateur après le chargement, ce qui retarde la page et peut en tronquer la fin sur mobile —, le catalogue
+  des trente-deux commandes hors pôles passe dans `docs/commandes.md`, le résumé anglais dans
+  `docs/README.en.md`, et les trois encarts « Nouveau en… » cèdent la place à un seul, qui renvoie ici.
 
 ## 1.3.1 — 27 octobre 2026
 

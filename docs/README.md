@@ -5,7 +5,9 @@
 | Document | Ce qu'il donne |
 |---|---|
 | [`../README.md`](../README.md) | la vitrine : installer, démarrer, les jalons, le mode autonome, le catalogue des 48 commandes |
+| [`commandes.md`](commandes.md) | le catalogue des 48 commandes, rangé par famille |
 | [`../CHANGELOG.md`](../CHANGELOG.md) | ce qui change à chaque version, la plus récente en premier |
+| [`README.en.md`](README.en.md) | the English summary |
 | [`../SUPPORT.md`](../SUPPORT.md) | où poser une question, et ce qui n'est pas du support |
 
 ## Pour contribuer
