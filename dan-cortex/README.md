@@ -63,10 +63,11 @@ les permissions de Claude Code, supprimer de façon irréversible, sortir un vra
 permission inutiles sans ouvrir les gestes dangereux. Détail : `skills/lancer-projet/references/autonomie.md`.
 
 
-### Les sept jalons
+### Les jalons
 
 | Jalon | Question tranchée |
 |---|---|
+| J0 Qualification | De quel projet parle-t-on, et comment travaille-t-on ? |
 | J1 Opportunité | Faut-il y aller, et sous quel angle ? |
 | J2 Cadrage | Quoi, pour qui, combien, quand ? |
 | J3 Conception | Comment exactement ? |
@@ -78,33 +79,119 @@ permission inutiles sans ouvrir les gestes dangereux. Détail : `skills/lancer-p
 Tu peux t'arrêter à n'importe quel jalon : une étude d'opportunité seule, un dossier de conception complet, ou
 tout le parcours jusqu'au lancement.
 
-### Utiliser un pôle seul
+### Utiliser un skill seul
 
-Chaque pôle s'utilise aussi directement.
+Chaque skill s'utilise aussi directement, rangé ici par famille.
+
+**Pilotage et décision**
 
 | Commande | Ce que tu obtiens |
 |---|---|
-| `/dan-cortex:veille-marche` | étude de marché, benchmark des concurrents, voix du client, analyse de contexte, positionnement |
-| `/dan-cortex:specifications` | note de cadrage, cahier des charges, spécifications générales, détaillées et techniques |
-| `/dan-cortex:maquettes-parcours` | workflows, matrice d'interactions (chaque bouton, chaque clic, sa destination), maquettes, thème |
-| `/dan-cortex:architecture-normes` | choix du langage et de la pile, architecture, schéma de données, normes de développement, infrastructure |
-| `/dan-cortex:usine-logicielle` | réalisation par lots, tests unitaires, fonctionnels, d'API, de bout en bout, recette, corrections |
-| `/dan-cortex:securite-protection` | analyse de risques, protections, tests de sécurité, cadrage d'un test d'intrusion, réponse à incident |
-| `/dan-cortex:juridique-conformite` | données personnelles, commerce et consommation, contrats, propriété intellectuelle, pénal, fiscalité |
-| `/dan-cortex:budget-finance` | estimation, budget complet, justification économique, financements |
-| `/dan-cortex:marketing-commercial` | stratégie de mise sur le marché, acquisition, prix, vente, plan de lancement |
-| `/dan-cortex:lancement-exploitation` | go/no-go, plan de bascule, mise en production, support, bilan |
+| `/dan-cortex:lancer-projet` | chef d'orchestre : qualification, équipe, vagues, jalons, tableau de bord |
+| `/dan-cortex:accueil-recueil` | premier contact guidé : besoin brut reformulé et validé, exploration, propositions, entretien, livrables, étude de réalisation |
 | `/dan-cortex:reunion-decision` | faire débattre les experts et tracer une décision |
 | `/dan-cortex:audit-general` | audit à 360° d'un projet, mené avec Dan-Cortex ou non |
-| `/dan-cortex:robustesse-agents` | audit des réglages Claude Code, réglages pour l'autonomie, scénarios d'injection d'instructions, évaluation live sur accord |
-| `/dan-cortex:execution-resiliente` | exécution orientée résultats : critères d'acceptation, reprise après erreur, poursuite des tâches indépendantes, vérification |
-| `/dan-cortex:confidentialite-traces` | masquage des secrets et données personnelles dans les sorties, journaux et rapports, sans toucher à la traçabilité |
+| `/dan-cortex:execution-resiliente` | critères d'acceptation, reprise après erreur, poursuite des tâches indépendantes, vérification |
+| `/dan-cortex:vigilance-discernement` | questions de suivi pour vérifier une réponse à décision ¹ |
+
+**Besoin et marché**
+
+| Commande | Ce que tu obtiens |
+|---|---|
+| `/dan-cortex:recueil-besoin` | interview adaptée au profil, du besoin brut au cahier des charges |
+| `/dan-cortex:veille-marche` | étude de marché, benchmark, voix du client, contexte, positionnement |
+| `/dan-cortex:specifications` | note de cadrage, cahier des charges, spécifications générales, détaillées et techniques |
+
+**Design et expérience**
+
+| Commande | Ce que tu obtiens |
+|---|---|
+| `/dan-cortex:maquettes-parcours` | workflows, matrice d'interactions (chaque bouton, sa destination), maquettes, thème |
+| `/dan-cortex:design-apple` | design de niveau Apple (règles HIG) pour le web, le mobile et les outils de gestion |
+| `/dan-cortex:mouvement-interface` | construire, chorégraphier, fluidifier, auditer et alléger les animations |
+| `/dan-cortex:conception-interface` | direction visuelle d'une interface, au-delà des gabarits par défaut ¹ |
+| `/dan-cortex:fabrique-themes` | dix thèmes de couleurs et de polices pour un livrable, ou un thème sur mesure ¹ |
+| `/dan-cortex:design-affiche` | affiche ou visuel artistique en PNG ou PDF ¹ |
+
+**Architecture et réalisation**
+
+| Commande | Ce que tu obtiens |
+|---|---|
+| `/dan-cortex:architecture-normes` | langage et pile, architecture, schéma de données, normes, infrastructure |
+| `/dan-cortex:usine-logicielle` | réalisation par lots, tests unitaires, fonctionnels, d'API, de bout en bout, recette |
+| `/dan-cortex:cartographie-graphe` | comprendre un code en graphe (Graphify, local) |
+| `/dan-cortex:boite-outils-it` | empreintes, secrets de test, TOTP, JWT, QR codes (IT-Tools, local) |
+| `/dan-cortex:crm-twenty` | CRM libre Twenty : auto-hébergement sûr, intégration, applications |
+| `/dan-cortex:webapp-testing` | tester une application web locale avec Playwright ² |
+
+**Sécurité et confiance**
+
+| Commande | Ce que tu obtiens |
+|---|---|
+| `/dan-cortex:securite-protection` | analyse de risques, protections, tests de sécurité, test d'intrusion autorisé, incident |
+| `/dan-cortex:robustesse-agents` | audit des réglages Claude Code, réglages pour l'autonomie, scénarios d'injection d'instructions |
+| `/dan-cortex:confidentialite-traces` | masquage des secrets et données personnelles dans les sorties, journaux et rapports |
+
+**Droit, finance et mise sur le marché**
+
+| Commande | Ce que tu obtiens |
+|---|---|
+| `/dan-cortex:juridique-conformite` | données personnelles, commerce, contrats, propriété intellectuelle, pénal, fiscalité |
+| `/dan-cortex:budget-finance` | estimation, budget complet, justification économique, financements |
+| `/dan-cortex:marketing-commercial` | mise sur le marché, acquisition, prix, vente, plan de lancement |
+| `/dan-cortex:lancement-exploitation` | go/no-go, plan de bascule, mise en production, support, bilan |
+
+**Contenus et langues**
+
+| Commande | Ce que tu obtiens |
+|---|---|
+| `/dan-cortex:atelier-ecriture` | écrire et éditer livres et romans, publier (EPUB/PDF), outils d'aide à l'écriture |
+| `/dan-cortex:traduction-interpretariat` | traduire (FR/AR/EN), localiser (RTL, PO/XLIFF), interprétariat |
+| `/dan-cortex:communication-interne` | points 3P, lettre d'information, FAQ interne, rapport d'incident ¹ |
+
+**3D, jeu et e-learning**
+
+| Commande | Ce que tu obtiens |
+|---|---|
+| `/dan-cortex:studio-3d-jeu` | Blender, Maya, ZBrush, Godot, Unity, Unreal, Roblox ; MCP pour Blender ; terrain et cartes (BlenderGIS) ³ |
+| `/dan-cortex:web-3d-immersif` | three.js, React Three Fiber, pages « scroll-world », fluide WebGL, portfolio 3D ³ |
+| `/dan-cortex:creation-medias-ia` | images, vidéo, audio, textures et assets 3D via Scenario, devis avant génération ³ |
+| `/dan-cortex:plateforme-elearning` | choisir, déployer et intégrer un LMS (Canvas LMS, LTI 1.3, API) |
+| `/dan-cortex:reconstruction-salle-blanche` | étudier un produit existant et construire sa propre version sans rien copier |
+
+³ Ouvre à la demande la bibliothèque `bibliotheque/` (173 compétences vendorisées, MIT).
+
+**Documents et médias**
+
+| Commande | Ce que tu obtiens |
+|---|---|
+| `/dan-cortex:docx` | créer, modifier, relire un .docx ² |
+| `/dan-cortex:pdf` | lire, fusionner, remplir, produire des PDF ² |
+| `/dan-cortex:pptx` | créer et modifier des .pptx ² |
+| `/dan-cortex:xlsx` | créer et recalculer des .xlsx avec formules ² |
+| `/dan-cortex:algorithmic-art` | art algorithmique p5.js ² |
+| `/dan-cortex:slack-gif-creator` | GIF animés optimisés pour Slack ² |
+| `/dan-cortex:brand-guidelines` | exemple : règles de marque d'Anthropic, à ne pas appliquer aux projets des clients ² |
+
+**Écosystème Claude**
+
+| Commande | Ce que tu obtiens |
+|---|---|
+| `/dan-cortex:claude-api` | bâtir avec l'API et les SDK Claude, migrations de modèles ² |
+| `/dan-cortex:mcp-builder` | concevoir et évaluer un serveur MCP ² |
+| `/dan-cortex:skill-creator` | écrire, évaluer et améliorer un skill ² |
+| `/dan-cortex:web-artifacts-builder` | artefacts HTML riches (React, Tailwind, shadcn/ui) ² |
+| `/dan-cortex:academy-guide` | orienter vers les cours de Claude Academy ² |
+
+¹ Texte traduit et adapté d'anthropics/skills (Apache-2.0). ² Copié d'anthropics/skills sans modification
+(Apache-2.0) ; ses scripts s'exécutent sur ta machine. Mentions : `NOTICE.md`. Guide des skills officiels :
+`skills/lancer-projet/references/skills-officiels-anthropic.md`.
 
 ## Comment ça marche
 
 - **Un chef d'orchestre** parle avec toi, lance les agents par vagues parallèles et ne lit que des comptes rendus
   courts.
-- **45 agents experts** répartis en pôles, chacun avec les compétences de son métier (le skill de son
+- **59 agents experts** répartis en 13 pôles, chacun avec les compétences de son métier (le skill de son
   pôle, préchargé) et les seuls outils dont il a besoin.
 - **Des orchestrateurs de pôle** découpent le travail en ordres de mission ; des sous-agents légers font la
   collecte et l'exécution.
@@ -121,17 +208,18 @@ Chaque pôle s'utilise aussi directement.
 - **Un script** tient les registres, vérifie les jalons, la traçabilité des exigences aux tests et la cohérence
   des interactions (aucun bouton sans destination, aucun écran orphelin).
 
-Le détail est dans `skills/lancer-projet/references/reseau.md`.
+Le détail est dans `skills/lancer-projet/references/reseau.md` et `skills/lancer-projet/references/organigramme.md`.
 
 ## Ce que contient le plugin
 
 | Élément | Nombre | Où |
 |---|---|---|
-| Skills | 16 | `skills/` |
-| Agents | 45 | `agents/` |
+| Skills | 48 | `skills/` |
+| Skills vendorisés (bibliothèque, chargés à la demande) | 173 | `bibliotheque/` |
+| Agents | 59 | `agents/` |
 | Contrôles de couverture | 784 | `skills/*/references/checklist-*.md` |
-| Fichiers de référence et gabarits | 126 | `skills/*/references/`, `skills/*/assets/` |
-| Scripts | 3 | `skills/lancer-projet/scripts/` (`cortex.py`, `essais.py`), `skills/robustesse-agents/scripts/` (`robustesse.py` et le paquet `ccal`) |
+| Fichiers de référence et gabarits | 231 | `skills/*/references/`, `skills/*/assets/` |
+| Scripts maison | 10 | `skills/lancer-projet/scripts/` (`cortex.py`, `essais.py`), `skills/robustesse-agents/scripts/` (`robustesse.py` et les 5 modules du paquet `ccal`), `skills/boite-outils-it/scripts/` (2 scripts Node) ; les skills copiés d'Anthropic apportent les leurs |
 
 ## Sobriété en tokens
 
@@ -183,3 +271,24 @@ Ordres de grandeur observés en octobre 2026 dans une session très équipée ; 
 Python 3 pour les scripts (bibliothèque standard uniquement ; 3.11 ou plus récent pour `robustesse.py`). Sans
 Python, le chef d'orchestre tient les mêmes registres à la main, pour plus cher en tokens. L'évaluation live du
 pôle `robustesse-agents` demande en plus le CLI `claude`.
+
+## Formations des agents
+
+Des fiches de référence denses (objectifs, principes, règles chiffrées, check-list d'audit, anti-patterns, exemples, pièges, sources primaires datées de novembre 2026) sont rattachées aux agents concernés par une ligne « Formations : » et citées dans les SKILL.md de leur pôle. Chaque fiche a son fichier de collecte dans `references/sources/` (URL, date, résumé de l'apport).
+
+| Pôle | Fiches (`skills/<pôle>/references/`) | Agents formés |
+|---|---|---|
+| maquettes-parcours | `formation-design-web-mobile.md`, `formation-ui-ux.md`, `formation-animation-motion.md`, `formation-figma-workflows.md` | maquettiste, concepteur-ux, cartographe-interactions, developpeur-frontend, developpeur-mobile, testeur-web, testeur-mobile, expert-accessibilite |
+| usine-logicielle | `formation-types-de-tests.md`, `formation-chrome-devtools.md`, `formation-playwright-mcp.md`, `formation-robot-framework.md`, `formation-cypress-typescript-cucumber.md`, `formation-postman.md`, `formation-tosca.md` | concepteur-tests, automaticien-tests, executant-tests, recetteur, testeur-web, testeur-mobile |
+| architecture-normes | `formation-architectures-web-mobile.md` | architecte-solution, architecte-donnees, ingenieur-devops, developpeur-backend, developpeur-frontend, developpeur-mobile |
+| architecture-normes | `formation-vercel.md`, `formation-supabase.md` (localisation des données, cas d'un client en Algérie) | architecte-solution, ingenieur-devops, architecte-donnees |
+| architecture-normes | `formation-keycloak.md` | architecte-solution, architecte-securite, developpeur-backend, ingenieur-devops |
+| architecture-normes | `formation-datocms.md` (bandeaux et promotions ; comparaison avec un module natif et des CMS libres) | architecte-solution, developpeur-frontend, redacteur-contenu-localisation, responsable-support-formation |
+| securite-protection | `formation-passi.md` (référentiel PASSI v2.2 ; les agents ne délivrent aucune qualification) | architecte-securite, auditeur-securite, testeur-intrusion |
+
+Les versions, prix et limites cités sont ceux constatés à la date des sources : ils se revérifient à la source avant toute décision.
+
+## Historique
+
+Les évolutions de chaque version sont dans le journal des versions du dépôt :
+https://github.com/aksilsmd/cortex/blob/main/CHANGELOG.md

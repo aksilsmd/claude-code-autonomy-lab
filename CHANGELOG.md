@@ -1,5 +1,20 @@
 # Journal des versions
 
+## 2.2.0 — 22 novembre 2026
+
+- Le réseau passe de 16 à 48 skills et de 45 à 59 agents, et s'ouvre à de nouveaux métiers : recueil du besoin
+  par interview adaptée au profil, design de niveau Apple et mouvement d'interface, boîte à outils IT locale,
+  cartographie du code en graphe, CRM libre Twenty, atelier d'écriture et maison d'édition, traduction et
+  interprétariat (FR/AR/EN), studio 3D et jeu vidéo, 3D web immersive, médias générés par IA, plateforme
+  e-learning et reconstruction en salle blanche.
+- Ajout de `bibliotheque/` : 173 skills vendorisés (MIT), chargés à la demande par les skills qui en ont besoin
+  et non au démarrage de la session, pour ne pas peser sur le contexte.
+- Ajout de `universel/` : noyau et version complète du mode universel, connaissances et skill d'accueil.
+- Les skills copiés ou adaptés d'anthropics/skills (Apache-2.0) sont attribués dans `dan-cortex/NOTICE.md` et
+  `dan-cortex/THIRD_PARTY_NOTICES.md`.
+- La matrice de couverture reste à 784 contrôles ; les mentions de version, les compteurs de la documentation et
+  l'archive `dist/dan-cortex.plugin` sont réalignés sur cette version.
+
 ## 1.3.1 — 27 octobre 2026
 
 - Les skills `execution-resiliente` et `confidentialite-traces` sont branchés dans le réseau, par renvoi et sans

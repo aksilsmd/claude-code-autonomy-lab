@@ -13,7 +13,7 @@
 |---|---|---|---|---|
 | A — jugement | arbitrer, concevoir, auditer | celui de la session (`inherit`) | élevé | architecte-solution, juriste-numerique, auditeur-general |
 | B — production | analyser, rédiger, développer, tester | `sonnet` | moyen | la plupart des experts |
-| C — collecte et exécution | collecter, exécuter, vérifier une liste | `haiku` | faible | collecteur-web, executant-tests, verificateur |
+| C — collecte et exécution | collecter, exécuter, vérifier une liste | `haiku` | faible | collecteur-web, executant-tests, verificateur, suivi-avancement |
 
 Le modèle et l'effort sont déjà inscrits dans chaque fiche d'agent : un lancement sans paramètre applique ce
 tableau. Ne passer un modèle à l'appel que pour appliquer les ajustements de la section 5.
@@ -35,6 +35,8 @@ Type d'agent à lancer : `dan-cortex:<nom>`.
 | `contradicteur` | B | Avocat du diable : cherche les failles d'une position, d'un plan, d'une décision |
 | `auditeur-general` | A | Super-auditeur indépendant : audit à 360° avant lancement et à la clôture |
 | `verificateur` | C | Contrôle un livrable contre sa liste de critères, à bas coût |
+| `suivi-avancement` | C | Relève l'avancement de chaque étape sur preuves et le rend en barres de progression avec leur état |
+| `vigie-oublis` | A | Vigie indépendante : engagements oubliés, promesses non tenues, preuves à rejouer, écarts à la méthode |
 
 ### Stratégie et marché (skill `veille-marche`)
 
@@ -55,6 +57,7 @@ Type d'agent à lancer : `dan-cortex:<nom>`.
 | `redacteur-sfg` | B | Spécifications fonctionnelles générales : fonctions, acteurs, processus, données |
 | `redacteur-sfd` | B | Spécifications fonctionnelles détaillées : règles de gestion, cas nominaux et d'exception |
 | `redacteur-specs-techniques` | B | Spécifications techniques : contrats d'interface, traitements, formats, paramétrage |
+| `intervieweur` | B | Recueil du besoin par entretien adapté au profil, du besoin brut au cahier des charges (skill `recueil-besoin`) |
 
 ### Design et expérience (skill `maquettes-parcours`)
 
@@ -88,6 +91,10 @@ Type d'agent à lancer : `dan-cortex:<nom>`.
 | `automaticien-tests` | B | Tests fonctionnels, d'API, de bout en bout, de performance automatisés |
 | `recetteur` | B | Recette globale : campagne, anomalies, PV |
 | `executant-tests` | C | Sous-agent : lance une suite de tests et rapporte les échecs |
+| `organisateur` | B | Carte des fonctionnalités, carnet de demandes et plan de vagues de test |
+| `testeur-web` | B | Conformité aux maquettes, multi-navigateurs, heuristiques, accessibilité clavier, régression visuelle |
+| `testeur-mobile` | B | Appareils émulés, thème sombre, tactile, RTL, réseau lent, ergonomie mobile |
+| `testeur-visuel` | B | Capture chaque écran et état, le compare à sa maquette, verdict bloquant ou non |
 
 ### Sécurité (skills `securite-protection`, `robustesse-agents`)
 
@@ -124,6 +131,23 @@ Type d'agent à lancer : `dan-cortex:<nom>`.
 |---|---|---|
 | `responsable-lancement` | B | Plan de lancement coordonné, plan de bascule, go/no-go, période de surveillance renforcée |
 | `responsable-support-formation` | B | Support, documentation utilisateur, formation, conduite du changement |
+
+### Écriture et édition (skill `atelier-ecriture`)
+
+| Agent | Niveau | Mission |
+|---|---|---|
+| `architecte-recit` | B | Structure, plan, arcs et cohérence d'un livre ou d'un roman |
+| `plume` | B | Rédige scènes et chapitres dans la voix et le point de vue choisis |
+| `editeur-litteraire` | B | Les quatre passes d'édition, relecture bêta et continuité |
+| `concepteur-univers` | B | Personnages, monde et continuité d'une œuvre |
+
+### Traduction et localisation (skill `traduction-interpretariat`)
+
+| Agent | Niveau | Mission |
+|---|---|---|
+| `traducteur` | B | Traduit un texte ou une œuvre (FR/AR/EN) en gardant sens, registre et intention, puis révise |
+| `interprete` | B | Prépare et cadre l'interprétation orale (consécutif, simultané, liaison) |
+| `localisateur` | B | Internationalise et localise un produit (RTL, formats, PO/XLIFF, mémoires de traduction) |
 
 ## 3. Qui activer selon le type de projet
 
@@ -171,7 +195,7 @@ Type d'agent à lancer : `dan-cortex:<nom>`.
 | planificateur | ● | ● | ● | ● | ○ | ● | au-delà de quelques semaines |
 | auditeur-general | ● | ● | ● | ● | ● | ● | |
 
-`rapporteur`, `contradicteur`, `verificateur`, `collecteur-web`, `executant-tests` et `orchestrateur-de-pole`
+`rapporteur`, `contradicteur`, `verificateur`, `suivi-avancement`, `collecteur-web`, `executant-tests` et `orchestrateur-de-pole`
 sont des agents de service, activés par les protocoles (réunions, essaimage, revues, orchestration déléguée).
 
 ## 4. Fusion des rôles en mode éclair
