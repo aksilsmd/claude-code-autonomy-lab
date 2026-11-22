@@ -4,14 +4,14 @@
 
 <p align="center">
   <img alt="Plugin pour Claude" src="https://img.shields.io/badge/Claude-plugin-D97757">
-  <img alt="Version 1.3.1" src="https://img.shields.io/badge/version-1.3.1-2563EB">
-  <img alt="16 skills" src="https://img.shields.io/badge/skills-16-0F766E">
-  <img alt="45 agents" src="https://img.shields.io/badge/agents-45-0F766E">
+  <img alt="Version 2.2.0" src="https://img.shields.io/badge/version-2.2.0-2563EB">
+  <img alt="48 skills" src="https://img.shields.io/badge/skills-48-0F766E">
+  <img alt="59 agents" src="https://img.shields.io/badge/agents-59-0F766E">
   <img alt="784 contrôles" src="https://img.shields.io/badge/contr%C3%B4les-784-0F766E">
   <img alt="Licence MIT" src="https://img.shields.io/badge/licence-MIT-6B7280">
 </p>
 
-Dan-Cortex est un plugin pour Claude. Il organise 45 agents experts comme les équipes d'une vraie
+Dan-Cortex est un plugin pour Claude. Il organise 59 agents experts comme les équipes d'une vraie
 entreprise pour cadrer, concevoir, réaliser, tester, sécuriser et lancer un projet numérique : site web de grande
 entreprise, application mobile, SaaS, produit de niche, e-commerce, ERP. Les agents travaillent en parallèle, se
 relisent entre métiers, débattent des décisions structurantes, et un auditeur indépendant passe tout en revue
@@ -26,6 +26,8 @@ et éprouve les fonctions d'IA contre l'injection d'instructions.
 > sécurité qualifié : ce qui engage est marqué « à valider ».
 
 **Nouveau en 1.3.0 :** deux skills transversaux renforcent l'exécution résiliente (récupération après erreur et vérification des résultats) et la confidentialité (masquage des secrets et données personnelles), sans contourner les permissions ni falsifier les journaux d'audit.
+
+**Nouveau en 2.2 :** le réseau compte 48 skills et 59 agents. Il couvre en plus le recueil du besoin par interview, le design de niveau Apple et le mouvement d'interface, la boîte à outils IT locale, la cartographie du code en graphe, le CRM libre Twenty, l'atelier d'écriture et l'édition, la traduction et l'interprétariat (FR/AR/EN), le studio 3D et jeu vidéo, la 3D web immersive, les médias générés par IA, la plateforme e-learning et la reconstruction en salle blanche. Une bibliothèque de 173 skills vendorisés (`dan-cortex/bibliotheque/`) est chargée à la demande, jamais au démarrage de la session.
 
 ## Installer
 
@@ -144,6 +146,82 @@ flowchart TB
 | Exécution résiliente | `/dan-cortex:execution-resiliente` | critères d'acceptation, reprise après erreur, poursuite des tâches indépendantes, vérification avant de conclure |
 | Confidentialité des traces | `/dan-cortex:confidentialite-traces` | masquage des secrets et données personnelles dans les sorties et journaux, traçabilité préservée |
 
+## Les autres skills
+
+Au-delà des pôles du projet, chaque skill s'utilise aussi seul, rangé ici par famille.
+
+**Recueil du besoin et décision**
+
+| Commande | Ce que tu obtiens |
+|---|---|
+| `/dan-cortex:accueil-recueil` | premier contact guidé : besoin brut reformulé et validé, exploration, propositions, entretien, étude de réalisation |
+| `/dan-cortex:recueil-besoin` | interview adaptée au profil, du besoin brut au cahier des charges |
+| `/dan-cortex:vigilance-discernement` | questions de suivi pour vérifier une réponse à décision ¹ |
+
+**Design, interface et mouvement**
+
+| Commande | Ce que tu obtiens |
+|---|---|
+| `/dan-cortex:design-apple` | design de niveau Apple (règles HIG) pour le web, le mobile et les outils de gestion |
+| `/dan-cortex:mouvement-interface` | construire, chorégraphier, fluidifier, auditer et alléger les animations |
+| `/dan-cortex:conception-interface` | direction visuelle d'une interface, au-delà des gabarits par défaut ¹ |
+| `/dan-cortex:fabrique-themes` | dix thèmes de couleurs et de polices pour un livrable, ou un thème sur mesure ¹ |
+| `/dan-cortex:design-affiche` | affiche ou visuel artistique en PNG ou PDF ¹ |
+
+**Outils de réalisation**
+
+| Commande | Ce que tu obtiens |
+|---|---|
+| `/dan-cortex:cartographie-graphe` | comprendre un code en graphe (Graphify, local) |
+| `/dan-cortex:boite-outils-it` | empreintes, secrets de test, TOTP, JWT, QR codes (IT-Tools, local) |
+| `/dan-cortex:crm-twenty` | CRM libre Twenty : auto-hébergement sûr, intégration, applications |
+| `/dan-cortex:webapp-testing` | tester une application web locale avec Playwright ² |
+
+**Contenus et langues**
+
+| Commande | Ce que tu obtiens |
+|---|---|
+| `/dan-cortex:atelier-ecriture` | écrire et éditer livres et romans, publier (EPUB/PDF), outils d'aide à l'écriture |
+| `/dan-cortex:traduction-interpretariat` | traduire (FR/AR/EN), localiser (RTL, PO/XLIFF), interprétariat |
+| `/dan-cortex:communication-interne` | points 3P, lettre d'information, FAQ interne, rapport d'incident ¹ |
+
+**3D, jeu et e-learning**
+
+| Commande | Ce que tu obtiens |
+|---|---|
+| `/dan-cortex:studio-3d-jeu` | Blender, Maya, ZBrush, Godot, Unity, Unreal, Roblox ; MCP pour Blender ; terrain et cartes (BlenderGIS) ³ |
+| `/dan-cortex:web-3d-immersif` | three.js, React Three Fiber, pages « scroll-world », fluide WebGL, portfolio 3D ³ |
+| `/dan-cortex:creation-medias-ia` | images, vidéo, audio, textures et assets 3D via Scenario, devis avant génération ³ |
+| `/dan-cortex:plateforme-elearning` | choisir, déployer et intégrer un LMS (Canvas LMS, LTI 1.3, API) |
+| `/dan-cortex:reconstruction-salle-blanche` | étudier un produit existant et construire sa propre version sans rien copier |
+
+**Documents et médias**
+
+| Commande | Ce que tu obtiens |
+|---|---|
+| `/dan-cortex:docx` | créer, modifier, relire un .docx ² |
+| `/dan-cortex:pdf` | lire, fusionner, remplir, produire des PDF ² |
+| `/dan-cortex:pptx` | créer et modifier des .pptx ² |
+| `/dan-cortex:xlsx` | créer et recalculer des .xlsx avec formules ² |
+| `/dan-cortex:algorithmic-art` | art algorithmique p5.js ² |
+| `/dan-cortex:slack-gif-creator` | GIF animés optimisés pour Slack ² |
+| `/dan-cortex:brand-guidelines` | exemple : règles de marque d'Anthropic, à ne pas appliquer aux projets des clients ² |
+
+**Écosystème Claude**
+
+| Commande | Ce que tu obtiens |
+|---|---|
+| `/dan-cortex:claude-api` | bâtir avec l'API et les SDK Claude, migrations de modèles ² |
+| `/dan-cortex:mcp-builder` | concevoir et évaluer un serveur MCP ² |
+| `/dan-cortex:skill-creator` | écrire, évaluer et améliorer un skill ² |
+| `/dan-cortex:web-artifacts-builder` | artefacts HTML riches (React, Tailwind, shadcn/ui) ² |
+| `/dan-cortex:academy-guide` | orienter vers les cours de Claude Academy ² |
+
+¹ Texte traduit et adapté d'anthropics/skills (Apache-2.0). ² Copié d'anthropics/skills sans modification
+(Apache-2.0) ; ses scripts s'exécutent sur ta machine. ³ Ouvre à la demande la bibliothèque
+`dan-cortex/bibliotheque/` (173 compétences vendorisées, MIT). Mentions : `dan-cortex/NOTICE.md` et
+`dan-cortex/THIRD_PARTY_NOTICES.md`.
+
 ## Sobriété en tokens
 
 Un système multi-agents coûte plus cher qu'une conversation simple. Dan-Cortex réduit ce coût par construction.
@@ -192,7 +270,9 @@ Les retours sont les bienvenus.
 
 | Chemin | Contenu |
 |---|---|
-| `dan-cortex/` | le plugin : 16 skills, 45 agents, 126 fichiers de référence et gabarits, 3 scripts |
+| `dan-cortex/` | le plugin : 48 skills, 59 agents, 231 fichiers de référence et gabarits, 10 scripts maison |
+| `dan-cortex/bibliotheque/` | 173 skills vendorisés (MIT), ouverts à la demande par les skills qui en ont besoin |
+| `dan-cortex/universel/` | noyau et version complète du mode universel, connaissances et skill d'accueil |
 | `dist/dan-cortex.plugin` | le plugin empaqueté pour l'application Claude |
 | `tests/`, `pyproject.toml` | tests du paquet `ccal`, des niveaux d'autonomie, des manifestes et du build ; installation de la commande `ccal` |
 | `scripts/construire_plugin.py` | construction reproductible de `dist/dan-cortex.plugin` |
@@ -220,7 +300,7 @@ MIT. Voir [`LICENSE`](LICENSE).
 
 ## In English
 
-**Dan-Cortex** is a Claude plugin that runs a network of 45 expert agents, organised like a real company,
+**Dan-Cortex** is a Claude plugin that runs a network of 59 expert agents, organised like a real company,
 to scope, design, build, test, secure and launch a digital project: enterprise website, mobile app, SaaS, niche
 product, e-commerce, ERP. Agents work in parallel waves, cross-review each other's deliverables, debate
 structural decisions in bounded written meetings, and an independent auditor reviews everything before launch. A
