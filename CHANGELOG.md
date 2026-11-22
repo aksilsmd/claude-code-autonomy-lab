@@ -14,6 +14,15 @@
   `dan-cortex/THIRD_PARTY_NOTICES.md`.
 - La matrice de couverture reste à 784 contrôles ; les mentions de version, les compteurs de la documentation et
   l'archive `dist/dan-cortex.plugin` sont réalignés sur cette version.
+- Le dépôt est réorganisé aux usages d'un projet public tenu : `AGENTS.md` (et son appel `CLAUDE.md`) énonce les
+  invariants, les commandes et la carte des dossiers pour les humains comme pour les agents ; un `Makefile` offre
+  un point d'entrée unique (`make verify`, `make build`) aligné sur l'intégration continue ; `SECURITY.md`,
+  `CODE_OF_CONDUCT.md`, `SUPPORT.md`, `CODEOWNERS`, les modèles de tickets et de pull request, `dependabot.yml`,
+  `.editorconfig` et `.gitattributes` complètent la gouvernance.
+- `docs/` reçoit un index, `docs/architecture.md` (anatomie du dépôt et du plugin, garanties de chaque test) et
+  `docs/publication.md` (numérotation, liste de contrôle d'une version, canaux de diffusion, retour en arrière).
+- Nouveaux garde-fous dans `tests/test_depot.py` : fichiers de gouvernance présents, index de la documentation
+  exact, liens relatifs résolus, et Makefile aligné sur les étapes de la CI.
 
 ## 1.3.1 — 27 octobre 2026
 

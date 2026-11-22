@@ -1,0 +1,52 @@
+name: Correction de droit, de norme ou d'outil
+description: Une référence juridique, normative ou de version est fausse, périmée ou incomplète.
+title: "[correction] "
+labels: ["correction normative"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Ce sont les contributions les plus utiles au projet. Les références du plugin sont à l'état de leur
+        date de rédaction, France et Union européenne d'abord : elles vieillissent.
+  - type: input
+    id: fichier
+    attributes:
+      label: Fichier concerné
+      description: Le chemin dans le dépôt, et la ligne ou le numéro de contrôle si tu l'as.
+      placeholder: dan-cortex/skills/juridique-conformite/references/checklist-RGP.md, contrôle RGP-042
+    validations:
+      required: true
+  - type: textarea
+    id: actuel
+    attributes:
+      label: Ce qui est écrit aujourd'hui
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: correct
+    attributes:
+      label: Ce qui devrait être écrit
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Source
+      description: Le texte, l'article, la norme, la page officielle, avec sa date ou sa version. Sans source, la correction ne peut pas être tranchée.
+      placeholder: |
+        Règlement (UE) 2016/679, article 30 — version consolidée du …
+        https://…
+    validations:
+      required: true
+  - type: dropdown
+    id: portee
+    attributes:
+      label: Portée
+      options:
+        - Une seule ligne ou un seul contrôle
+        - Plusieurs contrôles du même pôle
+        - Plusieurs pôles
+        - Une règle de fond du plugin
+    validations:
+      required: true

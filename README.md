@@ -3,6 +3,7 @@
 <p align="center"><strong>Le réseau d'agents experts qui lance vos projets numériques avec Claude.</strong></p>
 
 <p align="center">
+  <a href="https://github.com/aksilsmd/claude-code-autonomy-lab/actions/workflows/tests.yml"><img alt="État des tests" src="https://github.com/aksilsmd/claude-code-autonomy-lab/actions/workflows/tests.yml/badge.svg"></a>
   <img alt="Plugin pour Claude" src="https://img.shields.io/badge/Claude-plugin-D97757">
   <img alt="Version 2.2.0" src="https://img.shields.io/badge/version-2.2.0-2563EB">
   <img alt="48 skills" src="https://img.shields.io/badge/skills-48-0F766E">
@@ -28,6 +29,15 @@ et éprouve les fonctions d'IA contre l'injection d'instructions.
 **Nouveau en 1.3.0 :** deux skills transversaux renforcent l'exécution résiliente (récupération après erreur et vérification des résultats) et la confidentialité (masquage des secrets et données personnelles), sans contourner les permissions ni falsifier les journaux d'audit.
 
 **Nouveau en 2.2 :** le réseau compte 48 skills et 59 agents. Il couvre en plus le recueil du besoin par interview, le design de niveau Apple et le mouvement d'interface, la boîte à outils IT locale, la cartographie du code en graphe, le CRM libre Twenty, l'atelier d'écriture et l'édition, la traduction et l'interprétariat (FR/AR/EN), le studio 3D et jeu vidéo, la 3D web immersive, les médias générés par IA, la plateforme e-learning et la reconstruction en salle blanche. Une bibliothèque de 173 skills vendorisés (`dan-cortex/bibliotheque/`) est chargée à la demande, jamais au démarrage de la session.
+
+## Sommaire
+
+| | |
+|---|---|
+| [Installer](#installer) · [Démarrer](#démarrer) · [Le mode autonome](#le-mode-autonome) | prendre le plugin en main |
+| [Comment ça marche](#comment-ça-marche) · [Les pôles](#les-pôles) · [Les autres skills](#les-autres-skills) | ce que fait le réseau, et les 48 commandes |
+| [Sobriété en tokens](#sobriété-en-tokens) · [État de validation](#état-de-validation) · [Limites](#limites) | ce que ça coûte, ce qui est vérifié, ce qui ne l'est pas |
+| [Contenu du dépôt](#contenu-du-dépôt) · [Gouvernance](#gouvernance) · [Licence](#licence) | travailler sur le dépôt |
 
 ## Installer
 
@@ -276,18 +286,49 @@ Les retours sont les bienvenus.
 | `dist/dan-cortex.plugin` | le plugin empaqueté pour l'application Claude |
 | `tests/`, `pyproject.toml` | tests du paquet `ccal`, des niveaux d'autonomie, des manifestes et du build ; installation de la commande `ccal` |
 | `scripts/construire_plugin.py` | construction reproductible de `dist/dan-cortex.plugin` |
+| `Makefile` | le point d'entrée des commandes : `make verify`, `make build`, `make help` |
+| `AGENTS.md`, `CLAUDE.md` | les règles de travail du dépôt, partagées par les humains et les agents |
+| `docs/architecture.md` | l'anatomie du dépôt et du plugin, et ce que chaque test garantit |
+| `docs/publication.md` | la liste de contrôle d'une version et ses trois canaux de diffusion |
 | `docs/expertise.md` | le rapport d'expertise qui a servi à le construire, avec ses sources |
 | `docs/essai-a-blanc.md` | le compte rendu de l'essai en conditions réelles |
 
+## Gouvernance
+
+| Document | Ce qu'il donne |
+|---|---|
+| [`AGENTS.md`](AGENTS.md) | les règles de travail dans ce dépôt, en une page — pour les humains comme pour les IA |
+| [`CONTRIBUTING.md`](CONTRIBUTING.md) | le parcours d'une contribution, du ticket à la pull request |
+| [`docs/architecture.md`](docs/architecture.md) | comment le dépôt et le plugin sont faits, et ce que les tests garantissent |
+| [`docs/publication.md`](docs/publication.md) | numérotation, liste de contrôle d'une version, diffusion |
+| [`SECURITY.md`](SECURITY.md) | signaler une faille — jamais par un ticket public |
+| [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md) | les règles de la communauté |
+| [`SUPPORT.md`](SUPPORT.md) | où poser une question, et ce qui n'est pas du support |
+| [`CHANGELOG.md`](CHANGELOG.md) | ce qui change à chaque version |
+| [`docs/`](docs/README.md) | l'index complet de la documentation |
+
+**Si tu travailles ici avec une IA**, donne-lui [`AGENTS.md`](AGENTS.md) : il énonce les cinq invariants du
+dépôt, les commandes, la carte des dossiers et les gestes courants. Claude Code le charge tout seul par
+[`CLAUDE.md`](CLAUDE.md).
+
 ## Adapter et contribuer
 
-- Ajouter un contrôle : une ligne dans le fichier `checklist-*.md` du pôle, puis
-  `python3 dan-cortex/skills/lancer-projet/scripts/cortex.py plugin verifier`.
+Prérequis : Python 3.11 ou plus, bibliothèque standard uniquement. Un seul point d'entrée :
+
+```bash
+make verify   # les quatre contrôles de l'intégration continue
+make build    # reconstruit dist/dan-cortex.plugin après toute modification du plugin
+make help     # la liste des cibles
+```
+
+- Ajouter un contrôle : une ligne dans le fichier `checklist-*.md` du pôle, au format des autres, puis
+  `make verify`.
 - Changer ce qu'un jalon exige : `dan-cortex/skills/lancer-projet/assets/jalons.json`.
 - Modifier un agent : son fichier dans `dan-cortex/agents/`.
 - Ajouter un type de projet : un profil dans `dan-cortex/skills/lancer-projet/references/profils/`.
-- Lancer les tests : `python3 -m unittest discover -s tests -v`.
-- Reconstruire l'archive distribuable après toute modification du plugin : `python3 scripts/construire_plugin.py`.
+- Ajouter un skill ou un agent : la marche à suivre dans
+  [`docs/architecture.md`](docs/architecture.md#ajouter-un-skill).
+- Publier une version : la liste de contrôle de [`docs/publication.md`](docs/publication.md).
 
 Les corrections de droit, de normes et de versions d'outils sont particulièrement utiles : ouvre un ticket en
 citant le texte ou la source.

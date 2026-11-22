@@ -1,0 +1,21 @@
+# Normalisation des fins de ligne : le dépôt est en LF.
+* text=auto eol=lf
+
+*.py   text diff=python
+*.md   text diff=markdown
+*.json text
+*.yml  text
+Makefile text
+
+# L'archive livrée est binaire et générée : pas de diff, pas de fusion ligne à ligne.
+dist/dan-cortex.plugin binary linguist-generated
+*.png binary
+*.plugin binary
+
+# Dépendances vendorisées : exclues des statistiques de langage et du diff par défaut.
+dan-cortex/bibliotheque/** linguist-vendored
+dan-cortex/universel/**    linguist-vendored
+dan-cortex/skills/*/scripts/office/schemas/** linguist-vendored
+
+# Le dépôt est francophone.
+*.md linguist-language=Markdown

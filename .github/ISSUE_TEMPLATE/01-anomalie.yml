@@ -1,0 +1,66 @@
+name: Anomalie
+description: Un script, un skill ou un agent ne fait pas ce qu'il annonce.
+title: "[anomalie] "
+labels: ["anomalie"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Pour une **faille de sécurité**, n'utilise pas ce formulaire : suis
+        [SECURITY.md](../blob/HEAD/SECURITY.md) et passe par un signalement privé.
+  - type: input
+    id: version
+    attributes:
+      label: Version du plugin
+      description: Le champ `version` de `dan-cortex/.claude-plugin/plugin.json`, ou la version affichée dans le menu Plugins.
+      placeholder: 2.2.0
+    validations:
+      required: true
+  - type: dropdown
+    id: application
+    attributes:
+      label: Où
+      options:
+        - Claude Code (terminal)
+        - Claude Code (extension d'éditeur)
+        - Application Claude (web)
+        - Application Claude (bureau)
+        - Autre
+    validations:
+      required: true
+  - type: input
+    id: commande
+    attributes:
+      label: Commande ou agent concerné
+      placeholder: /dan-cortex:specifications
+    validations:
+      required: true
+  - type: textarea
+    id: reproduire
+    attributes:
+      label: Comment le reproduire
+      description: Les étapes, et la demande exacte que tu as faite. Retire tout secret et toute donnée personnelle.
+      placeholder: |
+        1. …
+        2. …
+    validations:
+      required: true
+  - type: textarea
+    id: attendu
+    attributes:
+      label: Ce que tu attendais, et ce qui s'est passé
+    validations:
+      required: true
+  - type: textarea
+    id: sortie
+    attributes:
+      label: Sortie des contrôles
+      description: Si l'anomalie touche un script, colle la sortie de `make verify`.
+      render: text
+  - type: checkboxes
+    id: hygiene
+    attributes:
+      label: Avant d'envoyer
+      options:
+        - label: Ce ticket ne contient ni secret, ni donnée personnelle, ni extrait de projet confidentiel.
+          required: true

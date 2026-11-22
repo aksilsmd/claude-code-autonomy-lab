@@ -1,11 +1,16 @@
+# Caches et artefacts de construction Python
 __pycache__/
 *.pyc
-.DS_Store
 *.egg-info/
 build/
 .venv/
+
+# Sorties des essais de robustesse (locales par défaut)
 ccal-results/
 ccal-scenarios.json
+
+# Systèmes de fichiers
+.DS_Store
 
 # Secrets et réglages locaux — ne jamais publier
 .claude/settings.local.json

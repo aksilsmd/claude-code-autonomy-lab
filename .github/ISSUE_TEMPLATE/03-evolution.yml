@@ -1,0 +1,45 @@
+name: Évolution
+description: Proposer un contrôle, un skill, un agent ou un profil de projet qui manque.
+title: "[évolution] "
+labels: ["évolution"]
+body:
+  - type: textarea
+    id: manque
+    attributes:
+      label: Le manque
+      description: Ce que le réseau oublie aujourd'hui, et sur quel projet réel cela s'est vu.
+    validations:
+      required: true
+  - type: dropdown
+    id: forme
+    attributes:
+      label: Forme proposée
+      options:
+        - Un contrôle de plus dans une checklist existante
+        - Un agent de plus dans un pôle existant
+        - Un skill nouveau
+        - Un profil de type de projet
+        - Je ne sais pas, à discuter
+    validations:
+      required: true
+  - type: textarea
+    id: livrable
+    attributes:
+      label: Ce que cela doit produire
+      description: Le livrable attendu, et comment on vérifie qu'il est fait.
+    validations:
+      required: true
+  - type: textarea
+    id: cout
+    attributes:
+      label: Coût en contexte
+      description: Un skill de plus pèse sur chaque session. Dis pourquoi le gain le justifie, ou pourquoi un chargement à la demande suffit.
+  - type: checkboxes
+    id: cadre
+    attributes:
+      label: Cadre du projet
+      options:
+        - label: Cette proposition n'élargit pas le mode autonome en retirant une limite dure.
+          required: true
+        - label: Cette proposition n'apporte aucune technique d'attaque ni charge utile offensive.
+          required: true

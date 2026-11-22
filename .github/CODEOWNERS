@@ -1,0 +1,17 @@
+# Propriétaires par défaut : toute pull request leur est assignée en revue.
+# Référence : https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+*                       @aksilsmd
+
+# Contrat de publication : version, place de marché, archive livrée.
+/.claude-plugin/        @aksilsmd
+/dist/                  @aksilsmd
+/scripts/               @aksilsmd
+/CHANGELOG.md           @aksilsmd
+
+# Règles de travail des humains et des agents.
+/AGENTS.md              @aksilsmd
+/CLAUDE.md              @aksilsmd
+/SECURITY.md            @aksilsmd
+/CODE_OF_CONDUCT.md     @aksilsmd
+/.github/               @aksilsmd
